@@ -1,0 +1,85 @@
+﻿{
+  "info": {
+    "name": "Pasantias MID",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Catalogo - Estados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/v1/catalogos/estados",
+          "host": ["{{base_url}}"],
+          "path": ["v1", "catalogos", "estados"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Catalogo - Proyectos Curriculares",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/v1/catalogos/proyectos-curriculares?q=sistemas",
+          "host": ["{{base_url}}"],
+          "path": ["v1", "catalogos", "proyectos-curriculares"],
+          "query": [
+            {
+              "key": "q",
+              "value": "sistemas"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Externo - Registro",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombres\": \"Juan\",\n  \"apellidos\": \"Pérez\",\n  \"identificacion\": \"123456\",\n  \"tercero_persona_id\": 0,\n  \"empresa\": {\n    \"nit\": \"900123456\",\n    \"nombre\": \"ACME S.A.S\"\n  },\n  \"correo\": \"juan.perez@example.com\",\n  \"telefono\": \"3001234567\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/externo/registro",
+          "host": ["{{base_url}}"],
+          "path": ["v1", "externo", "registro"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Postulaciones - Crear",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"estudiante_id\": 1,\n  \"oferta_id\": 10\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/postulaciones",
+          "host": ["{{base_url}}"],
+          "path": ["v1", "postulaciones"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": []
+}
